@@ -1,21 +1,24 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
+
+using namespace std;
 
 int main() {
-    int N;
-    scanf("%d", &N);
+    int n;
+    cin >> n;
 
-    int const arr[10] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
+    const int leds[10] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
 
-    while (N--) {
-        char str[101];
-        scanf("%s", str);
+    while (n--) {
+        string s;
+        cin >> s;
 
-        int i = 0, leds = 0;
-        while (str[i]) {
-            leds += arr[str[i++] - '0'];
+        int sum = 0;
+
+        for (char c : s) {
+            sum += leds[c - '0'];
         }
 
-        printf("%d leds\n", leds);
+        cout << sum << " leds\n";
     }
 
     return 0;
